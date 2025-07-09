@@ -71,20 +71,44 @@ java developer.ezandro.main.NIOMain
 
 ## 📊 Dados de Exemplo
 
-O projeto trabalha com arquivos CSV contendo dados de usuários no formato:
+O projeto trabalha com arquivos CSV contendo dados de usuários separados por ponto e vírgula. Os dados são gerados dinamicamente pelas classes main através de operações de inserção, remoção e substituição:
+
+### Processo IOMain:
+- **Inserções iniciais**: Lucas, Maria, João
+- **Operações**: Remoções por padrão de data, buscas por nome/email, substituição de registro
+- **Estado final**: Carlos e Maria (após operações de replace e remove)
+
+### Processo NIOMain:
+- **Inserções iniciais**: Bianca, Bernardo, Ricardo
+- **Operações**: Remoções por padrão de data, buscas por nome/email, substituição de registro
+- **Estado final**: Bianca (após operações de replace e remove)
+
+### Arquivos resultantes:
+
+**IO/user.csv:**
 ```csv
-id,nome,email,idade
-1,João Silva,joao@email.com,30
-2,Maria Santos,maria@email.com,25
+Carlos;carlos@carlos.com;22/03/1991;
+Maria;maria@maria.com;23/10/2000;
 ```
+
+**NIO/user.csv:**
+```csv
+Bianca;bianca@bianca.com;22/03/1998;
+```
+
+**Formato**: `nome;email;data_nascimento;`
 
 ## 🛠️ Funcionalidades Implementadas
 
-- ✅ Leitura de arquivos CSV
-- ✅ Escrita de arquivos CSV
-- ✅ Tratamento de exceções customizado
-- ✅ Comparação de performance entre IO e NIO
-- ✅ Estrutura modular e extensível
+- ✅ **Inserção de dados** em arquivos CSV
+- ✅ **Leitura completa** de arquivos (findAll)
+- ✅ **Busca por padrões** específicos (findBy)
+- ✅ **Remoção de registros** por padrão de texto
+- ✅ **Substituição de registros** por padrão de match
+- ✅ **Tratamento de exceções** customizado
+- ✅ **Comparação de performance** entre IO e NIO
+- ✅ **Estrutura modular** e extensível
+- ✅ **Operações dinâmicas** de manipulação de dados
 
 ## 🎯 Objetivos de Aprendizado
 
